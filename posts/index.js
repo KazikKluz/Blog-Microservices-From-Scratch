@@ -16,7 +16,7 @@ app.post("/posts", (req, res) => {
   const { title } = req.body;
   posts[id] = {
     id,
-    ititle,
+    title,
   };
   res.status(201).send(posts[id]);
 });
