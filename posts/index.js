@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 const posts = {};
 
 app.get("/posts", (req, res) => {
-  req.send(posts);
+  res.send(posts);
 });
 
 app.post("/posts", (req, res) => {
