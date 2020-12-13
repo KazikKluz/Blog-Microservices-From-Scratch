@@ -10,8 +10,6 @@ app.use(cors());
 
 const posts = {};
 
-console.log("dupa");
-
 app.get("/posts", (req, res) => {
   res.send(posts);
 });
