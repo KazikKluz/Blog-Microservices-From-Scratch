@@ -48,10 +48,12 @@ app.post("/events", (req, res) => {
 });
 
 app.listen(4002, async () => {
-  const res = await axios.get("http://event-bus-srv:4005/events");
+  const res = await axios
+    .get("http://event-bus-srv:4005/events")
+    .catch((err) => console.log(err));
 
   for (let event of res.data) {
-    console.log("Processing event:", event.type);
+    console.log("Processing the event:", event.type);
     handleEvents(event.type, event.data);
   }
 
